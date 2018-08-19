@@ -1,4 +1,4 @@
-#unclude <smBut.h>
+#include <smBut.h>
 smBut bt1(7,1);
 
 void setup() {
