@@ -22,26 +22,25 @@
 #endif
 
 class smBut {
+  
   public:
-  int btPin, butSt;
-  smBut();
-  smBut(int p, int m) {
-  if (m==0) pinMode(p, INPUT); 
-  if (m==1) pinMode(p, INPUT_PULLUP); mode=m; btPin=p;}
-  ~smBut();
+   int btPin, butSt;
+   smBut();
+   smBut(int p, int m) {
+    if (m==0) pinMode(p, INPUT); 
+    if (m==1) pinMode(p, INPUT_PULLUP); mode=m; btPin=p;
+   }
+   ~smBut();
+   byte start ();
 
-   private:
-  unsigned long preEnter, postEnter;
-  bool flagOff, flag_on;
-  int  mode;
+  private:
+    unsigned long preEnter, postEnter;
+    bool flagOff, flag_on;
+    int  mode;
     enum class state : byte  {Idle, PreClick, Click, Hold, LongHold, ForcedIdle};
     enum class input : byte  {Release, WaitDebounce, WaitHold, WaitLongHold, WaitIdle, Press};
     state btState;
+    void button (input in);
 
-  void button () {}
-
-    public:                                 
-    byte start () {  }
- 
 };
 #endif
