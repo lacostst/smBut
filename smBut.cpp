@@ -3,10 +3,10 @@
 smBut::smBut() {}
 smBut::~smBut() {}
 
- smBut::smBut(int p, int m) {
+/* smBut::smBut(int p, int m) {
   if (m==0) pinMode(p, INPUT); 
   if (m==1) pinMode(p, INPUT_PULLUP); mode=m; btPin=p;}
-   
+*/   
  
   void smBut::button (input in) {
    switch (in) {
